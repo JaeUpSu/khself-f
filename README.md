@@ -1,38 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⭐ KHSelf
 
-## Getting Started
+```
+웹 프론트 개발자인
 
-First, run the development server:
+나의 Identity 를 보여주기 위한
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+포트폴리오 웹
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<br>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 🐾 설계
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br>
 
-## Learn More
+- [ ] 내용 : 자기소개/이력서 + PortFolio
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Page 구성 : 4 개
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] 기능
+  - [ ] 더보기 API Call
+  - [ ] 편집
+  - [ ] 로그인
+  - [ ] Contact Me
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br>
 
-## Deploy on Vercel
+- [ ] Home Page : 자기소개서/이력서
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] PPT Page : 간략설명 + 이미지
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] PPT-Detail Page : PortFolio
+
+- [ ] 관리자 Page : 로그인 후 글자 편집 기능 + 대시보드
+
+<br>
+<br>
+
+## 🪵 목표
+
+<br>
+
+- [ ] RWD (웹표준, 접근성) 고려
+
+- [ ] GUI 고려
+
+- [ ] RESTFul API
+
+- [ ] JWT 로그인
+
+- [ ] SSG 를 이용한 성능 고려
+
+- [ ] useMemo 을 이용한 성능 고려
+
+- [ ] useCallback 을 이용한 성능 고려
+
+- [ ] lazy-loading 을 이용한 성능 고려
+
+- [ ] React-Query Cache 활용
+
+- [ ] Google Analytics 활용
+
+- [ ] Docker 를 통한 Front, Back 통합
+
+- [ ] AWS 를 통한 배포
+
+- [ ] GihubActions 를 통한 CI/CD
+
+<br>
+<br>
+
+## ⚙️ Skills
+
+<hr>
+<br>
+<br>
+
+### ✔️ Front
+
+<br>
+
+- React
+
+- Next.js
+
+- TypeScript
+
+- Recoil
+
+- React-Query
+
+- Axios
+
+- Emotion
+
+- styled-components
+
+- yarn
+
+<br>
+<br>
+
+### ✔️ Back
+
+<br>
+
+- DJango
+
+- DRF
+
+- Postgre SQL
+
+- Swagger
+
+<br>
+<br>
+
+### ✔️ Common
+
+<br>
+
+- Deploy (AWS)
+
+- CI/CD (Github Actions)
+
+- GA
+
+<br>
+<br>
+
+### 🖋️ Process
+
+<br>
+
+```
+프로덕트 개발
+리포지토리를 확인
+프런트엔드 및 백엔드용 Docker 이미지 빌드
+Docker 환경에서 테스트 실행
+AWS 자격 증명으로 AWS CLI 구성
+Amazon ECR에 로그인합니다.
+Docker 이미지를 Amazon ECR로 푸시
+AWS에 애플리케이션 배포(특정 배포 명령을 입력해야 함)
+```
