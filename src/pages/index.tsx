@@ -27,6 +27,7 @@ import {
   SiAndroid,
   SiDjango,
   SiSentry,
+  SiFirebase,
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
@@ -226,6 +227,13 @@ export default function Home(): React.ReactElement {
                   border={true}
                 />
                 <SiSentry
+                  style={{
+                    width: `${mdIconSize}px`,
+                    height: `${mdIconSize}px`,
+                  }}
+                  border={true}
+                />
+                <SiFirebase
                   style={{
                     width: `${mdIconSize}px`,
                     height: `${mdIconSize}px`,
