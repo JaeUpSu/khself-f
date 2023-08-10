@@ -1,19 +1,20 @@
+import styled from "styled-components";
+
 import {
   Box,
   Heading,
   Image,
   VStack,
-  Button,
-  Link,
+  Link as ChakraLink,
   IconButton,
   Flex,
   Spacer,
-  HStack,
   Tooltip,
   Text,
+  List,
+  ListItem,
 } from "@chakra-ui/react";
 
-import styled from "styled-components";
 import {
   SiVelog,
   SiGithub,
@@ -32,6 +33,7 @@ import {
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
+import ScrollLink from "./components/ScrollLink";
 
 const FixedHeader = styled.header`
   position: fixed;
@@ -50,236 +52,269 @@ export default function Home(): React.ReactElement {
 
   return (
     <main>
-      <VStack border="2px solid salmon" w="100%" px="32px">
+      <VStack border="2px solid salmon" w="100%" px="32px" pb="10">
         <VStack py="10px" w="100%" maxW="1200px">
           <FixedHeader>
             <Flex w="100%" justifyContent="center">
-              <Flex
-                p="2"
-                w="100%"
-                maxW="1200px"
-                alignItems="center"
-                border="2px solid gray"
-              >
+              <Flex px="2" py="3" w="100%" maxW="1200px" alignItems="center">
                 <Heading as="h1" size="md" mr="4">
                   My Portfolio
                 </Heading>
                 <Spacer />
-                <HStack spacing={4}>
-                  <Button variant="link">Home</Button>
-                  <Button variant="link">PPT</Button>
-                  <Button variant="link">Contact Me</Button>
-                </HStack>
+                <nav>
+                  <List
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    listStyleType="none"
+                    gap={8}
+                  >
+                    <ListItem key={1}>
+                      <ScrollLink to="Home" label="Home" />
+                    </ListItem>
+                    <ListItem key={2}>
+                      <ScrollLink to="Description" label="Description" />
+                    </ListItem>
+                    <ListItem key={3}>
+                      <ScrollLink to="PortFolio" label="PortFolio" />
+                    </ListItem>
+                    <ListItem key={4}>
+                      <ScrollLink to="Contact Me" label="Contact Me" />
+                    </ListItem>
+                  </List>
+                </nav>
               </Flex>
             </Flex>
           </FixedHeader>
-          <VStack
-            w="100%"
-            spacing={4}
-            padding={4}
-            marginTop="80px"
-            alignItems="center"
-            border="2px solid orange"
+          <section
+            id="Home"
+            style={{
+              padding: 4,
+              width: "100%",
+              marginTop: "80px",
+              border: "2px solid orange",
+            }}
           >
-            <Flex
-              w="90%"
-              alignItems="center"
-              justifyContent="space-around"
-              mt={4}
-              border="2px solid brown"
-            >
-              <Image
-                borderRadius="full"
-                border="1px solid gray"
-                boxSize="250px"
-                src="man.png"
-                alt="Profile Photo"
-              />
-              <Box ml={4} border="2px solid purple">
-                <Heading as="h2">Kim Hyeon Su</Heading>
-                <Box textAlign="end" mt="5">
-                  신입 프론트 엔드
+            <VStack spacing={4} alignItems="center">
+              <Flex
+                w="90%"
+                alignItems="center"
+                justifyContent="space-around"
+                mt={4}
+                border="2px solid brown"
+              >
+                <Image
+                  borderRadius="full"
+                  border="1px solid gray"
+                  boxSize="250px"
+                  src="man.png"
+                  alt="Profile Photo"
+                />
+                <Box ml={4} border="2px solid purple">
+                  <Heading as="h2">Kim Hyeon Su</Heading>
+                  <Box textAlign="end" mt="5">
+                    신입 프론트 엔드
+                  </Box>
+                  <Box textAlign="end" mt="3">
+                    hyeongs2323@gmail.com
+                  </Box>
+                  <Flex
+                    border="2px solid red"
+                    gap="10px"
+                    mt="6"
+                    justifyContent="end"
+                  >
+                    <Tooltip label="Github Link">
+                      <ChakraLink
+                        href="https://github.com/your-username"
+                        isExternal
+                      >
+                        <IconButton
+                          size="md"
+                          aria-label="GitHub"
+                          icon={
+                            <SiGithub
+                              style={{
+                                width: `${smIconSize}px`,
+                                height: `${smIconSize}px`,
+                              }}
+                            />
+                          }
+                        />
+                      </ChakraLink>
+                    </Tooltip>
+                    <Tooltip label="Tech Blog Link">
+                      <ChakraLink
+                        href="https://your-tech-blog-link.com"
+                        isExternal
+                      >
+                        <IconButton
+                          size="md"
+                          aria-label="Tech Blog"
+                          icon={
+                            <SiVelog
+                              style={{
+                                width: `${smIconSize}px`,
+                                height: `${smIconSize}px`,
+                                color: "#63E6BE",
+                              }}
+                            />
+                          }
+                        />
+                      </ChakraLink>
+                    </Tooltip>
+                  </Flex>
                 </Box>
-                <Box textAlign="end" mt="3">
-                  hyeongs2323@gmail.com
+              </Flex>
+              <Box border="2px solid blue" mt="10">
+                <Heading as="h3" size="md">
+                  Front-End Technologies I use
+                </Heading>
+                <Box display="flex" alignItems="center" gap="50px" mt="4">
+                  <SiReact
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiTypescript
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiRedux
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiNextdotjs
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiGraphql
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiReactquery
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiReacthookform
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiJest
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
                 </Box>
-                <Flex
-                  border="2px solid red"
-                  gap="10px"
-                  mt="6"
-                  justifyContent="end"
-                >
-                  <Tooltip label="Github Link">
-                    <Link href="https://github.com/your-username" isExternal>
-                      <IconButton
-                        size="md"
-                        aria-label="GitHub"
-                        icon={
-                          <SiGithub
-                            style={{
-                              width: `${smIconSize}px`,
-                              height: `${smIconSize}px`,
-                            }}
-                          />
-                        }
-                      />
-                    </Link>
-                  </Tooltip>
-                  <Tooltip label="Tech Blog Link">
-                    <Link href="https://your-tech-blog-link.com" isExternal>
-                      <IconButton
-                        size="md"
-                        aria-label="Tech Blog"
-                        icon={
-                          <SiVelog
-                            style={{
-                              width: `${smIconSize}px`,
-                              height: `${smIconSize}px`,
-                              color: "#63E6BE",
-                            }}
-                          />
-                        }
-                      />
-                    </Link>
-                  </Tooltip>
-                </Flex>
+                <Heading as="h3" size="md" mt="60px">
+                  Technologies I use
+                </Heading>
+                <Box display="flex" alignItems="center" gap="50px" mt="4">
+                  <SiDjango
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiGithub
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiSentry
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiFirebase
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <SiAndroid
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                  <FaJava
+                    style={{
+                      width: `${mdIconSize}px`,
+                      height: `${mdIconSize}px`,
+                    }}
+                  />
+                </Box>
               </Box>
-            </Flex>
-            <Box border="2px solid blue" mt="10">
-              <Heading as="h3" size="md">
-                Front-End Technologies I use
-              </Heading>
-              <Box display="flex" alignItems="center" gap="50px" mt="4">
-                <SiReact
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiTypescript
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiRedux
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiNextdotjs
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiGraphql
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiReactquery
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiReacthookform
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiJest
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-              </Box>
-              <Heading as="h3" size="md" mt="8">
-                Technologies I use
-              </Heading>
-              <Box display="flex" alignItems="center" gap="50px" mt="4">
-                <SiDjango
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiGithub
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiSentry
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiFirebase
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiAndroid
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <FaJava
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-              </Box>
-            </Box>
-          </VStack>
-          <VStack
-            p="2"
-            mt="10"
-            w="100%"
-            border="2px solid green"
-            alignItems="start"
+            </VStack>
+          </section>
+          <section
+            id="Description"
+            style={{
+              padding: 2,
+              marginTop: 10,
+              width: "100%",
+              height: "100vh",
+              border: "2px solid green",
+            }}
           >
-            <Text fontWeight="bold" fontSize="xl">
-              설명
-            </Text>
-            <Text>Description</Text>
-          </VStack>
-          <VStack
-            p="2"
-            mt="10"
-            w="100%"
-            border="2px solid darkGray"
-            alignItems="start"
+            <VStack w="100%" alignItems="start">
+              <Text fontWeight="bold" fontSize="xl">
+                설명
+              </Text>
+              <Text>Description</Text>
+            </VStack>
+          </section>
+          <section
+            id="PortFolio"
+            style={{
+              padding: 2,
+              marginTop: 10,
+              width: "100%",
+              height: "100vh",
+              border: "2px solid darkGray",
+            }}
           >
-            <Text fontWeight="bold" fontSize="xl">
-              포트폴리오
-            </Text>
-            <Text>Portfolio</Text>
-          </VStack>
+            <VStack w="100%" alignItems="start">
+              <Text fontWeight="bold" fontSize="xl">
+                포트폴리오
+              </Text>
+              <Text>Portfolio</Text>
+            </VStack>
+          </section>
+          <section
+            id="Contact Me"
+            style={{
+              padding: 2,
+              marginTop: 10,
+              width: "100%",
+              height: "100vh",
+              border: "2px solid lightGray",
+            }}
+          >
+            <VStack w="100%" alignItems="start">
+              <Text fontWeight="bold" fontSize="xl">
+                연락하기
+              </Text>
+              <Text>Contact Me</Text>
+            </VStack>
+          </section>
         </VStack>
       </VStack>
     </main>
