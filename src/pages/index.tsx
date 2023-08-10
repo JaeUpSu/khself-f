@@ -28,6 +28,7 @@ import {
   SiDjango,
   SiSentry,
   SiFirebase,
+  SiGraphql,
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
@@ -96,7 +97,12 @@ export default function Home(): React.ReactElement {
               />
               <Box ml={4} border="2px solid purple">
                 <Heading as="h2">Kim Hyeon Su</Heading>
-                <Box textAlign="end">신입 프론트 엔드</Box>
+                <Box textAlign="end" mt="5">
+                  신입 프론트 엔드
+                </Box>
+                <Box textAlign="end" mt="3">
+                  hyeongs2323@gmail.com
+                </Box>
                 <Flex
                   border="2px solid red"
                   gap="10px"
@@ -143,7 +149,7 @@ export default function Home(): React.ReactElement {
               <Heading as="h3" size="md">
                 Front-End Technologies I use
               </Heading>
-              <Box display="flex" gap="20px" mt="4">
+              <Box display="flex" alignItems="center" gap="50px" mt="4">
                 <SiReact
                   style={{
                     width: `${mdIconSize}px`,
@@ -166,6 +172,13 @@ export default function Home(): React.ReactElement {
                   border={true}
                 />
                 <SiNextdotjs
+                  style={{
+                    width: `${mdIconSize}px`,
+                    height: `${mdIconSize}px`,
+                  }}
+                  border={true}
+                />
+                <SiGraphql
                   style={{
                     width: `${mdIconSize}px`,
                     height: `${mdIconSize}px`,
@@ -197,22 +210,8 @@ export default function Home(): React.ReactElement {
               <Heading as="h3" size="md" mt="8">
                 Technologies I use
               </Heading>
-              <Box display="flex" gap="20px" mt="4">
+              <Box display="flex" alignItems="center" gap="50px" mt="4">
                 <SiDjango
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <FaJava
-                  style={{
-                    width: `${mdIconSize}px`,
-                    height: `${mdIconSize}px`,
-                  }}
-                  border={true}
-                />
-                <SiAndroid
                   style={{
                     width: `${mdIconSize}px`,
                     height: `${mdIconSize}px`,
@@ -240,6 +239,20 @@ export default function Home(): React.ReactElement {
                   }}
                   border={true}
                 />
+                <SiAndroid
+                  style={{
+                    width: `${mdIconSize}px`,
+                    height: `${mdIconSize}px`,
+                  }}
+                  border={true}
+                />
+                <FaJava
+                  style={{
+                    width: `${mdIconSize}px`,
+                    height: `${mdIconSize}px`,
+                  }}
+                  border={true}
+                />
               </Box>
             </Box>
           </VStack>
@@ -254,6 +267,18 @@ export default function Home(): React.ReactElement {
               설명
             </Text>
             <Text>Description</Text>
+          </VStack>
+          <VStack
+            p="2"
+            mt="10"
+            w="100%"
+            border="2px solid darkGray"
+            alignItems="start"
+          >
+            <Text fontWeight="bold" fontSize="xl">
+              포트폴리오
+            </Text>
+            <Text>Portfolio</Text>
           </VStack>
         </VStack>
       </VStack>
