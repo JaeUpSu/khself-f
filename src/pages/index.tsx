@@ -55,6 +55,7 @@ export default function Home(): React.ReactElement {
 
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
   const profileImgValues = useBreakpointValue({ base: "300px", md: "250px" });
+  const skillValues = useBreakpointValue({ base: "0px", md: "25px" });
 
   return (
     <main>
@@ -105,7 +106,11 @@ export default function Home(): React.ReactElement {
               padding: 4,
               width: "100%",
               marginTop: "80px",
-              border: "2px solid orange",
+              paddingTop: "40px",
+              paddingBottom: "40px",
+              borderRadius: 30,
+              boxShadow:
+                "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
             }}
           >
             <VStack spacing={4} alignItems="center">
@@ -113,7 +118,6 @@ export default function Home(): React.ReactElement {
                 pt={5}
                 w="100%"
                 maxW="850px"
-                border="2px solid brown"
                 templateColumns={{ base: "1fr", md: "1fr 1fr" }}
               >
                 <GridItem
@@ -190,101 +194,127 @@ export default function Home(): React.ReactElement {
                   </Box>
                 </GridItem>
               </Grid>
-              <Box border="2px solid blue" mt="10">
+              <Box
+                p={6}
+                mt="10"
+                border="2px solid rgb(220,220,220)"
+                borderRadius="md"
+              >
                 <Heading as="h3" size="md">
                   Front-End Technologies I use
                 </Heading>
-                <Box display="flex" alignItems="center" gap="50px" mt="4">
-                  <SiReact
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiTypescript
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiRedux
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiNextdotjs
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiGraphql
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiReactquery
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiReacthookform
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiJest
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                </Box>
+                <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+                  <Box display="flex" alignItems="center" gap="50px" mt="4">
+                    <SiReact
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiTypescript
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiRedux
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiNextdotjs
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                  </Box>
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap="50px"
+                    ml={skillValues}
+                    mt="4"
+                  >
+                    <SiGraphql
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiReactquery
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiReacthookform
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiJest
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                  </Box>
+                </Grid>
+
                 <Heading as="h3" size="md" mt="60px">
                   Technologies I use
                 </Heading>
-                <Box display="flex" alignItems="center" gap="50px" mt="4">
-                  <SiDjango
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiGithub
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiSentry
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiFirebase
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <SiAndroid
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                  <FaJava
-                    style={{
-                      width: `${mdIconSize}px`,
-                      height: `${mdIconSize}px`,
-                    }}
-                  />
-                </Box>
+                <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+                  <Box display="flex" alignItems="center" gap="50px" mt="4">
+                    <SiDjango
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiGithub
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiSentry
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <SiFirebase
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                  </Box>
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap="50px"
+                    ml={skillValues}
+                    mt="4"
+                  >
+                    <SiAndroid
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                    <FaJava
+                      style={{
+                        width: `${mdIconSize}px`,
+                        height: `${mdIconSize}px`,
+                      }}
+                    />
+                  </Box>
+                </Grid>
               </Box>
             </VStack>
           </section>
