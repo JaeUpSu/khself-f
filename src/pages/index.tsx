@@ -36,6 +36,8 @@ import {
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
+import { DiTechcrunch } from "react-icons/di";
+
 import ScrollLink from "./components/ScrollLink";
 
 const FixedHeader = styled.header`
@@ -57,6 +59,11 @@ export default function Home(): React.ReactElement {
   const profileImgValues = useBreakpointValue({ base: "300px", md: "250px" });
   const skillValues = useBreakpointValue({ base: "0px", md: "25px" });
 
+  const handleReloadAndScroll = () => {
+    window.location.reload();
+    window.scrollTo(0, 0);
+  };
+
   return (
     <main>
       <VStack w="100%" px="32px" pb="10">
@@ -64,7 +71,11 @@ export default function Home(): React.ReactElement {
           <FixedHeader>
             <Flex w="100%" justifyContent="center">
               <Flex px="2" w="100%" maxW="1200px" alignItems="center">
-                <Heading size="xl">
+                <Heading
+                  size="xl"
+                  onClick={handleReloadAndScroll}
+                  cursor="pointer"
+                >
                   <Image src="khs_logo.png" boxSize="70px" />
                 </Heading>
                 <Spacer />
@@ -77,7 +88,7 @@ export default function Home(): React.ReactElement {
                     gap={headerGapValues}
                   >
                     <ListItem key={1}>
-                      <ScrollLink to="Home" label="Home" />
+                      <ScrollLink to="Profile" label="Profile" />
                     </ListItem>
                     <ListItem key={2}>
                       <ScrollLink to="Description" label="Description" />
@@ -95,7 +106,7 @@ export default function Home(): React.ReactElement {
           </FixedHeader>
           <Image mt="130px" w="45%" h="45vh" src="khs_image2.png" />
           <section
-            id="Home"
+            id="Profile"
             style={{
               padding: 4,
               width: "100%",
@@ -147,7 +158,7 @@ export default function Home(): React.ReactElement {
                     <Flex gap="10px" mt="6" justifyContent="end">
                       <Tooltip label="Github Link">
                         <ChakraLink
-                          href="https://github.com/your-username"
+                          href="https://github.com/JaeUpSu"
                           isExternal
                         >
                           <IconButton
@@ -164,9 +175,28 @@ export default function Home(): React.ReactElement {
                           />
                         </ChakraLink>
                       </Tooltip>
+                      <Tooltip label="Frontend Log Link">
+                        <ChakraLink
+                          href="https://github.com/JaeUpSu/My-Front-Log/tree/main"
+                          isExternal
+                        >
+                          <IconButton
+                            size="md"
+                            aria-label="Frontend Log"
+                            icon={
+                              <DiTechcrunch
+                                style={{
+                                  width: `${smIconSize}px`,
+                                  height: `${smIconSize}px`,
+                                }}
+                              />
+                            }
+                          />
+                        </ChakraLink>
+                      </Tooltip>
                       <Tooltip label="Tech Blog Link">
                         <ChakraLink
-                          href="https://your-tech-blog-link.com"
+                          href="https://velog.io/@hugh0223"
                           isExternal
                         >
                           <IconButton
