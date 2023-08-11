@@ -13,6 +13,7 @@ import {
   Text,
   List,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 import {
@@ -50,13 +51,22 @@ export default function Home(): React.ReactElement {
   const smIconSize = 30;
   const mdIconSize = 40;
 
+  const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
+
   return (
     <main>
       <VStack border="2px solid salmon" w="100%" px="32px" pb="10">
         <VStack py="10px" w="100%" maxW="1200px">
           <FixedHeader>
             <Flex w="100%" justifyContent="center">
-              <Flex px="2" py="3" w="100%" maxW="1200px" alignItems="center">
+              <Flex
+                px="2"
+                py="3"
+                w="100%"
+                maxW="1200px"
+                alignItems="center"
+                border="2px solid yellow"
+              >
                 <Heading as="h1" size="md" mr="4">
                   My Portfolio
                 </Heading>
@@ -67,7 +77,7 @@ export default function Home(): React.ReactElement {
                     flexDirection="row"
                     alignItems="center"
                     listStyleType="none"
-                    gap={8}
+                    gap={headerGapValues}
                   >
                     <ListItem key={1}>
                       <ScrollLink to="Home" label="Home" />
@@ -79,7 +89,7 @@ export default function Home(): React.ReactElement {
                       <ScrollLink to="PortFolio" label="PortFolio" />
                     </ListItem>
                     <ListItem key={4}>
-                      <ScrollLink to="Contact Me" label="Contact Me" />
+                      <ScrollLink to="Contact" label="Contact" />
                     </ListItem>
                   </List>
                 </nav>
@@ -299,7 +309,7 @@ export default function Home(): React.ReactElement {
             </VStack>
           </section>
           <section
-            id="Contact Me"
+            id="Contact"
             style={{
               padding: 2,
               marginTop: 10,

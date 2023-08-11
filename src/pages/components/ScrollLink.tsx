@@ -19,7 +19,7 @@ const ScrollLink = ({ to, label }: Props) => {
   };
 
   return (
-    <ChakraLink onClick={scrollToSection} cursor="pointer">
+    <ChakraLink onClick={scrollToSection} cursor="pointer" fontSize="md">
       {label}
     </ChakraLink>
   );
