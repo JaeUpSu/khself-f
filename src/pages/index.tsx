@@ -14,6 +14,8 @@ import {
   List,
   ListItem,
   useBreakpointValue,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 
 import {
@@ -52,6 +54,7 @@ export default function Home(): React.ReactElement {
   const mdIconSize = 40;
 
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
+  const profileImgValues = useBreakpointValue({ base: "300px", md: "250px" });
 
   return (
     <main>
@@ -106,76 +109,87 @@ export default function Home(): React.ReactElement {
             }}
           >
             <VStack spacing={4} alignItems="center">
-              <Flex
-                w="90%"
-                alignItems="center"
-                justifyContent="space-around"
-                mt={4}
+              <Grid
+                pt={5}
+                w="100%"
+                maxW="850px"
                 border="2px solid brown"
+                templateColumns={{ base: "1fr", md: "1fr 1fr" }}
               >
-                <Image
-                  borderRadius="full"
-                  border="1px solid gray"
-                  boxSize="250px"
-                  src="man.png"
-                  alt="Profile Photo"
-                />
-                <Box ml={4} border="2px solid purple">
-                  <Heading as="h2">Kim Hyeon Su</Heading>
-                  <Box textAlign="end" mt="5">
-                    신입 프론트 엔드
+                <GridItem
+                  w="100%"
+                  key="pImg"
+                  display="flex"
+                  justifyContent="center"
+                >
+                  <Image
+                    src="man.png"
+                    alt="Profile Photo"
+                    borderRadius="full"
+                    border="1px solid gray"
+                    boxSize={profileImgValues}
+                  />
+                </GridItem>
+                <GridItem
+                  w="100%"
+                  key="pText"
+                  display="flex"
+                  justifyContent="center"
+                >
+                  <Box ml={4} mt={7}>
+                    <Heading as="h2" textAlign="end">
+                      Kim Hyeon Su
+                    </Heading>
+                    <Box textAlign="end" mt="5">
+                      신입 프론트 엔드
+                    </Box>
+                    <Box textAlign="end" mt="3">
+                      hyeongs2323@gmail.com
+                    </Box>
+                    <Flex gap="10px" mt="6" justifyContent="end">
+                      <Tooltip label="Github Link">
+                        <ChakraLink
+                          href="https://github.com/your-username"
+                          isExternal
+                        >
+                          <IconButton
+                            size="md"
+                            aria-label="GitHub"
+                            icon={
+                              <SiGithub
+                                style={{
+                                  width: `${smIconSize}px`,
+                                  height: `${smIconSize}px`,
+                                }}
+                              />
+                            }
+                          />
+                        </ChakraLink>
+                      </Tooltip>
+                      <Tooltip label="Tech Blog Link">
+                        <ChakraLink
+                          href="https://your-tech-blog-link.com"
+                          isExternal
+                        >
+                          <IconButton
+                            size="md"
+                            aria-label="Tech Blog"
+                            icon={
+                              <SiVelog
+                                style={{
+                                  width: `${smIconSize}px`,
+                                  height: `${smIconSize}px`,
+                                  color: "#63E6BE",
+                                }}
+                              />
+                            }
+                          />
+                        </ChakraLink>
+                      </Tooltip>
+                    </Flex>
                   </Box>
-                  <Box textAlign="end" mt="3">
-                    hyeongs2323@gmail.com
-                  </Box>
-                  <Flex
-                    border="2px solid red"
-                    gap="10px"
-                    mt="6"
-                    justifyContent="end"
-                  >
-                    <Tooltip label="Github Link">
-                      <ChakraLink
-                        href="https://github.com/your-username"
-                        isExternal
-                      >
-                        <IconButton
-                          size="md"
-                          aria-label="GitHub"
-                          icon={
-                            <SiGithub
-                              style={{
-                                width: `${smIconSize}px`,
-                                height: `${smIconSize}px`,
-                              }}
-                            />
-                          }
-                        />
-                      </ChakraLink>
-                    </Tooltip>
-                    <Tooltip label="Tech Blog Link">
-                      <ChakraLink
-                        href="https://your-tech-blog-link.com"
-                        isExternal
-                      >
-                        <IconButton
-                          size="md"
-                          aria-label="Tech Blog"
-                          icon={
-                            <SiVelog
-                              style={{
-                                width: `${smIconSize}px`,
-                                height: `${smIconSize}px`,
-                                color: "#63E6BE",
-                              }}
-                            />
-                          }
-                        />
-                      </ChakraLink>
-                    </Tooltip>
-                  </Flex>
-                </Box>
-              </Flex>
+                </GridItem>
+              </Grid>
               <Box border="2px solid blue" mt="10">
                 <Heading as="h3" size="md">
                   Front-End Technologies I use
