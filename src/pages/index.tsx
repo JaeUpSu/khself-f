@@ -59,20 +59,13 @@ export default function Home(): React.ReactElement {
 
   return (
     <main>
-      <VStack border="2px solid salmon" w="100%" px="32px" pb="10">
+      <VStack w="100%" px="32px" pb="10">
         <VStack py="10px" w="100%" maxW="1200px">
           <FixedHeader>
             <Flex w="100%" justifyContent="center">
-              <Flex
-                px="2"
-                py="3"
-                w="100%"
-                maxW="1200px"
-                alignItems="center"
-                border="2px solid yellow"
-              >
-                <Heading as="h1" size="md" mr="4">
-                  My Portfolio
+              <Flex px="2" w="100%" maxW="1200px" alignItems="center">
+                <Heading size="xl">
+                  <Image src="khs_logo.png" boxSize="70px" />
                 </Heading>
                 <Spacer />
                 <nav>
@@ -100,12 +93,13 @@ export default function Home(): React.ReactElement {
               </Flex>
             </Flex>
           </FixedHeader>
+          <Image mt="130px" w="45%" h="45vh" src="khs_image2.png" />
           <section
             id="Home"
             style={{
               padding: 4,
               width: "100%",
-              marginTop: "80px",
+              marginTop: "50px",
               paddingTop: "40px",
               paddingBottom: "40px",
               borderRadius: 30,
@@ -195,12 +189,13 @@ export default function Home(): React.ReactElement {
                 </GridItem>
               </Grid>
               <Box
-                p={6}
+                py={8}
+                px={14}
                 mt="10"
-                border="2px solid rgb(220,220,220)"
+                border="1px solid rgb(210,210,210)"
                 borderRadius="md"
               >
-                <Heading as="h3" size="md">
+                <Heading as="h3" size="md" mb="10px">
                   Front-End Technologies I use
                 </Heading>
                 <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
@@ -264,7 +259,7 @@ export default function Home(): React.ReactElement {
                   </Box>
                 </Grid>
 
-                <Heading as="h3" size="md" mt="60px">
+                <Heading as="h3" size="md" mt="60px" mb="10px">
                   Technologies I use
                 </Heading>
                 <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
