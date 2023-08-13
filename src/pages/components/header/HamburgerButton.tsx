@@ -11,9 +11,13 @@ import {
   Input,
   DrawerFooter,
   useDisclosure,
+  VStack,
+  List,
+  ListItem,
 } from "@chakra-ui/react";
 
 import { RxHamburgerMenu } from "react-icons/rx";
+import ScrollLink from "../ScrollLink";
 
 function HamburgerButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,17 +45,32 @@ function HamburgerButton() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>KHS-ELF</DrawerHeader>
-
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <nav>
+              <List
+                w="100%"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                listStyleType="none"
+                gap={3}
+                mt={10}
+              >
+                <ListItem key={1} w="100%" h="60px" onClick={onClose}>
+                  <ScrollLink to="Profile" label="Profile" />
+                </ListItem>
+                <ListItem key={2} w="100%" h="60px" onClick={onClose}>
+                  <ScrollLink to="Description" label="Description" />
+                </ListItem>
+                <ListItem key={3} w="100%" h="60px" onClick={onClose}>
+                  <ScrollLink to="PortFolio" label="PortFolio" />
+                </ListItem>
+                <ListItem key={4} w="100%" h="60px" onClick={onClose}>
+                  <ScrollLink to="Contact" label="Contact" />
+                </ListItem>
+              </List>
+            </nav>
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>

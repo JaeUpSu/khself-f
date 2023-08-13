@@ -20,10 +20,18 @@ const ScrollLink = ({ to, label }: Props) => {
 
   return (
     <ChakraLink
+      h="100%"
+      display="flex"
       cursor="pointer"
       fontWeight="bold"
       color="rgb(80, 80, 80)"
       onClick={scrollToSection}
+      border="1px solid gray"
+      alignItems="center"
+      justifyContent="center"
+      _hover={{
+        backgroundColor: "rgb(200, 200, 200)",
+      }}
     >
       {label}
     </ChakraLink>

@@ -68,7 +68,6 @@ export default function Home(): React.ReactElement {
 
   const handleReloadAndScroll = () => {
     window.location.reload();
-    window.scrollTo(0, 0);
   };
 
   return (
