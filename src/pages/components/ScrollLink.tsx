@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link as ChakraLink, useBreakpointValue } from "@chakra-ui/react";
 
 interface Props {
   to: string;
@@ -19,7 +19,12 @@ const ScrollLink = ({ to, label }: Props) => {
   };
 
   return (
-    <ChakraLink onClick={scrollToSection} cursor="pointer" fontSize="md">
+    <ChakraLink
+      cursor="pointer"
+      fontWeight="bold"
+      color="rgb(80, 80, 80)"
+      onClick={scrollToSection}
+    >
       {label}
     </ChakraLink>
   );

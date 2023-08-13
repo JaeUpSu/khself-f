@@ -96,7 +96,7 @@
 
 - Axios
 
-- Emotion
+- Chakra UI
 
 - styled-components
 

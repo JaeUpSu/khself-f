@@ -2,20 +2,21 @@ import styled from "styled-components";
 
 import {
   Box,
-  Heading,
-  Image,
-  VStack,
-  Link as ChakraLink,
-  IconButton,
-  Flex,
-  Spacer,
-  Tooltip,
   Text,
+  Image,
+  Flex,
+  VStack,
+  Spacer,
+  Heading,
+  Tooltip,
+  IconButton,
   List,
   ListItem,
-  useBreakpointValue,
   Grid,
   GridItem,
+  Link as ChakraLink,
+  useBreakpointValue,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 import {
@@ -39,6 +40,7 @@ import { FaJava } from "react-icons/fa";
 import { DiTechcrunch } from "react-icons/di";
 
 import ScrollLink from "./components/ScrollLink";
+import HamburgerButton from "./components/header/HamburgerButton";
 
 const FixedHeader = styled.header`
   position: fixed;
@@ -55,9 +57,14 @@ export default function Home(): React.ReactElement {
   const smIconSize = 30;
   const mdIconSize = 40;
 
+  const [isBelowBreakPoint] = useMediaQuery("(max-width: 550px)");
+
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
   const profileImgValues = useBreakpointValue({ base: "300px", md: "250px" });
   const skillValues = useBreakpointValue({ base: "0px", md: "25px" });
+  const skillGapValues = useBreakpointValue({ base: "30px", md: "50px" });
+  const skillBorderValues = useBreakpointValue({ base: "0px", md: "1px" });
+  const skillJustifyValues = useBreakpointValue({ base: "center", md: "left" });
 
   const handleReloadAndScroll = () => {
     window.location.reload();
@@ -76,10 +83,15 @@ export default function Home(): React.ReactElement {
                   onClick={handleReloadAndScroll}
                   cursor="pointer"
                 >
-                  <Image src="khs_logo.png" boxSize="70px" />
+                  <Image
+                    src="khs_logo.png"
+                    boxSize="70px"
+                    objectFit="contain"
+                    maxWidth="100%"
+                  />
                 </Heading>
                 <Spacer />
-                <nav>
+                <nav style={{ display: isBelowBreakPoint ? "none" : "block" }}>
                   <List
                     display="flex"
                     flexDirection="row"
@@ -101,10 +113,11 @@ export default function Home(): React.ReactElement {
                     </ListItem>
                   </List>
                 </nav>
+                {isBelowBreakPoint && <HamburgerButton />}
               </Flex>
             </Flex>
           </FixedHeader>
-          <Image mt="130px" w="45%" h="45vh" src="khs_image2.png" />
+          <Image mt="130px" w="400px" h="340px" src="khs_image2.png" />
           <section
             id="Profile"
             style={{
@@ -222,14 +235,21 @@ export default function Home(): React.ReactElement {
                 py={8}
                 px={14}
                 mt="10"
-                border="1px solid rgb(210,210,210)"
+                border="0px solid rgb(210,210,210)"
+                borderWidth={skillBorderValues}
                 borderRadius="md"
               >
                 <Heading as="h3" size="md" mb="10px">
                   Front-End Technologies I use
                 </Heading>
                 <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
-                  <Box display="flex" alignItems="center" gap="50px" mt="4">
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={skillGapValues}
+                    mt="4"
+                  >
                     <SiReact
                       style={{
                         width: `${mdIconSize}px`,
@@ -258,7 +278,8 @@ export default function Home(): React.ReactElement {
                   <Box
                     display="flex"
                     alignItems="center"
-                    gap="50px"
+                    justifyContent="center"
+                    gap={skillGapValues}
                     ml={skillValues}
                     mt="4"
                   >
@@ -293,7 +314,13 @@ export default function Home(): React.ReactElement {
                   Technologies I use
                 </Heading>
                 <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
-                  <Box display="flex" alignItems="center" gap="50px" mt="4">
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={skillGapValues}
+                    mt="4"
+                  >
                     <SiDjango
                       style={{
                         width: `${mdIconSize}px`,
@@ -322,7 +349,8 @@ export default function Home(): React.ReactElement {
                   <Box
                     display="flex"
                     alignItems="center"
-                    gap="50px"
+                    justifyContent={skillJustifyValues}
+                    gap={skillGapValues}
                     ml={skillValues}
                     mt="4"
                   >
