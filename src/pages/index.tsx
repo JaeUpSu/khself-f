@@ -14,9 +14,12 @@ import {
   ListItem,
   Grid,
   GridItem,
+  Avatar,
   Link as ChakraLink,
   useBreakpointValue,
   useMediaQuery,
+  StatLabel,
+  Stat,
 } from "@chakra-ui/react";
 
 import {
@@ -41,6 +44,7 @@ import { DiTechcrunch } from "react-icons/di";
 
 import ScrollLink from "./components/ScrollLink";
 import HamburgerButton from "./components/header/HamburgerButton";
+import { GaugeBar } from "./components/GaugeBar";
 
 const FixedHeader = styled.header`
   position: fixed;
@@ -140,10 +144,10 @@ export default function Home(): React.ReactElement {
                   display="flex"
                   justifyContent="center"
                 >
-                  <Image
+                  <Avatar
+                    size="lg"
                     src="man.png"
-                    alt="Profile Photo"
-                    borderRadius="full"
+                    name="Profile Photo"
                     border="1px solid gray"
                     boxSize={profileImgValues}
                   />
@@ -197,6 +201,7 @@ export default function Home(): React.ReactElement {
                                 style={{
                                   width: `${smIconSize}px`,
                                   height: `${smIconSize}px`,
+                                  color: "#3344dd",
                                 }}
                               />
                             }
@@ -238,7 +243,7 @@ export default function Home(): React.ReactElement {
                 <Heading as="h3" size="md" mb="10px">
                   Front-End Technologies I use
                 </Heading>
-                <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+                <Grid gap="5" templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
                   <Box
                     display="flex"
                     alignItems="center"
@@ -246,30 +251,58 @@ export default function Home(): React.ReactElement {
                     gap={skillGapValues}
                     mt="4"
                   >
-                    <SiReact
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiTypescript
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiRedux
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiNextdotjs
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
+                    <Flex
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <SiReact
+                        style={{
+                          width: `${mdIconSize}px`,
+                          height: `${mdIconSize}px`,
+                        }}
+                      />
+                      <GaugeBar gauge={3} />
+                    </Flex>
+                    <Flex
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <SiTypescript
+                        style={{
+                          width: `${mdIconSize}px`,
+                          height: `${mdIconSize}px`,
+                        }}
+                      />
+                      <GaugeBar gauge={3} />
+                    </Flex>
+                    <Flex
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <SiRedux
+                        style={{
+                          width: `${mdIconSize}px`,
+                          height: `${mdIconSize}px`,
+                        }}
+                      />
+                      <GaugeBar gauge={2} />
+                    </Flex>
+                    <Flex
+                      flexDirection="column"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      <SiNextdotjs
+                        style={{
+                          width: `${mdIconSize}px`,
+                          height: `${mdIconSize}px`,
+                        }}
+                      />
+                      <GaugeBar gauge={2} />
+                    </Flex>
                   </Box>
                   <Box
                     display="flex"
@@ -309,7 +342,7 @@ export default function Home(): React.ReactElement {
                 <Heading as="h3" size="md" mt="60px" mb="10px">
                   Technologies I use
                 </Heading>
-                <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
+                <Grid gap="5" templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
                   <Box
                     display="flex"
                     alignItems="center"
