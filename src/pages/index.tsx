@@ -1,5 +1,5 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
-
 import {
   Box,
   Text,
@@ -57,6 +57,7 @@ export default function Home(): React.ReactElement {
   const smIconSize = 30;
   const mdIconSize = 40;
 
+  const router = useRouter();
   const [isBelowBreakPoint] = useMediaQuery("(max-width: 600px)");
 
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
@@ -66,8 +67,8 @@ export default function Home(): React.ReactElement {
   const skillBorderValues = useBreakpointValue({ base: "0px", lg: "1px" });
   const skillJustifyValues = useBreakpointValue({ base: "center", md: "left" });
 
-  const handleReloadAndScroll = () => {
-    window.location.reload();
+  const handleReload = () => {
+    router.push(router.pathname);
   };
 
   return (
@@ -77,11 +78,7 @@ export default function Home(): React.ReactElement {
           <FixedHeader>
             <Flex w="100%" justifyContent="center">
               <Flex px="2" w="100%" maxW="1200px" alignItems="center">
-                <Heading
-                  size="xl"
-                  onClick={handleReloadAndScroll}
-                  cursor="pointer"
-                >
+                <Heading size="xl" onClick={handleReload} cursor="pointer">
                   <Image
                     src="khs_logo.png"
                     boxSize="70px"
