@@ -45,6 +45,7 @@ import { DiTechcrunch } from "react-icons/di";
 import ScrollLink from "./components/ScrollLink";
 import HamburgerButton from "./components/header/HamburgerButton";
 import { GaugeBar } from "./components/GaugeBar";
+import SkillIcon from "./components/SkillIcon";
 
 const FixedHeader = styled.header`
   position: fixed;
@@ -60,6 +61,25 @@ const FixedHeader = styled.header`
 export default function Home(): React.ReactElement {
   const smIconSize = 30;
   const mdIconSize = 40;
+  const frontSkillIcons = [
+    SiReact,
+    SiTypescript,
+    SiRedux,
+    SiNextdotjs,
+    SiGraphql,
+    SiReactquery,
+    SiReacthookform,
+    SiJest,
+  ];
+
+  const skillIcons = [
+    SiDjango,
+    SiGithub,
+    SiSentry,
+    SiFirebase,
+    SiAndroid,
+    FaJava,
+  ];
 
   const router = useRouter();
   const [isBelowBreakPoint] = useMediaQuery("(max-width: 600px)");
@@ -251,58 +271,9 @@ export default function Home(): React.ReactElement {
                     gap={skillGapValues}
                     mt="4"
                   >
-                    <Flex
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <SiReact
-                        style={{
-                          width: `${mdIconSize}px`,
-                          height: `${mdIconSize}px`,
-                        }}
-                      />
-                      <GaugeBar gauge={3} />
-                    </Flex>
-                    <Flex
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <SiTypescript
-                        style={{
-                          width: `${mdIconSize}px`,
-                          height: `${mdIconSize}px`,
-                        }}
-                      />
-                      <GaugeBar gauge={3} />
-                    </Flex>
-                    <Flex
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <SiRedux
-                        style={{
-                          width: `${mdIconSize}px`,
-                          height: `${mdIconSize}px`,
-                        }}
-                      />
-                      <GaugeBar gauge={2} />
-                    </Flex>
-                    <Flex
-                      flexDirection="column"
-                      alignItems="center"
-                      justifyContent="center"
-                    >
-                      <SiNextdotjs
-                        style={{
-                          width: `${mdIconSize}px`,
-                          height: `${mdIconSize}px`,
-                        }}
-                      />
-                      <GaugeBar gauge={2} />
-                    </Flex>
+                    {frontSkillIcons.slice(0, 4).map((Icon, index) => (
+                      <SkillIcon key={index} gauge={4} icon={<Icon />} />
+                    ))}
                   </Box>
                   <Box
                     display="flex"
@@ -312,30 +283,9 @@ export default function Home(): React.ReactElement {
                     ml={skillValues}
                     mt="4"
                   >
-                    <SiGraphql
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiReactquery
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiReacthookform
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiJest
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
+                    {frontSkillIcons.slice(4).map((Icon, index) => (
+                      <SkillIcon key={index} gauge={4} icon={<Icon />} />
+                    ))}
                   </Box>
                 </Grid>
 
@@ -350,30 +300,9 @@ export default function Home(): React.ReactElement {
                     gap={skillGapValues}
                     mt="4"
                   >
-                    <SiDjango
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiGithub
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiSentry
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <SiFirebase
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
+                    {skillIcons.slice(0, 4).map((Icon, index) => (
+                      <SkillIcon key={index} gauge={4} icon={<Icon />} />
+                    ))}
                   </Box>
                   <Box
                     display="flex"
@@ -383,18 +312,9 @@ export default function Home(): React.ReactElement {
                     ml={skillValues}
                     mt="4"
                   >
-                    <SiAndroid
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
-                    <FaJava
-                      style={{
-                        width: `${mdIconSize}px`,
-                        height: `${mdIconSize}px`,
-                      }}
-                    />
+                    {skillIcons.slice(4).map((Icon, index) => (
+                      <SkillIcon key={index} gauge={4} icon={<Icon />} />
+                    ))}
                   </Box>
                 </Grid>
               </Box>

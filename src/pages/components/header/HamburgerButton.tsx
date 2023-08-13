@@ -15,22 +15,47 @@ import {
 import { RxHamburgerMenu } from "react-icons/rx";
 import ScrollLink from "../ScrollLink";
 
+const ForwardedRxHamburger = React.forwardRef<
+  SVGSVGElement,
+  React.SVGProps<SVGSVGElement>
+>(({ onClick, style, ...rest }, ref) => (
+  <RxHamburgerMenu
+    onClick={onClick}
+    style={{
+      ...style,
+      width: "30px",
+      height: "30px",
+      cursor: "pointer",
+    }}
+    {...rest}
+    ref={ref}
+  />
+));
+
 function HamburgerButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef<HTMLButtonElement>(null);
+  const btnRef = React.useRef<SVGSVGElement | null>(null);
   const smIconSize = 30;
+
+  const handleHamburgerClick = () => {
+    onOpen();
+  };
 
   return (
     <>
-      <RxHamburgerMenu
-        ref={btnRef}
-        onClick={onOpen}
+      <div
+        onClick={handleHamburgerClick}
         style={{
-          width: `${smIconSize}px`,
-          height: `${smIconSize}px`,
           cursor: "pointer",
         }}
-      />
+      >
+        <RxHamburgerMenu
+          style={{
+            width: `${smIconSize}px`,
+            height: `${smIconSize}px`,
+          }}
+        />
+      </div>
       <Drawer
         isOpen={isOpen}
         placement="right"
