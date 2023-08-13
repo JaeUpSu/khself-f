@@ -1,17 +1,13 @@
 import React from "react";
 
 import {
-  Button,
   Drawer,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  Input,
-  DrawerFooter,
   useDisclosure,
-  VStack,
   List,
   ListItem,
 } from "@chakra-ui/react";

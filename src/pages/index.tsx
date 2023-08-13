@@ -57,13 +57,13 @@ export default function Home(): React.ReactElement {
   const smIconSize = 30;
   const mdIconSize = 40;
 
-  const [isBelowBreakPoint] = useMediaQuery("(max-width: 550px)");
+  const [isBelowBreakPoint] = useMediaQuery("(max-width: 600px)");
 
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
   const profileImgValues = useBreakpointValue({ base: "300px", md: "250px" });
   const skillValues = useBreakpointValue({ base: "0px", md: "25px" });
   const skillGapValues = useBreakpointValue({ base: "30px", md: "50px" });
-  const skillBorderValues = useBreakpointValue({ base: "0px", md: "1px" });
+  const skillBorderValues = useBreakpointValue({ base: "0px", lg: "1px" });
   const skillJustifyValues = useBreakpointValue({ base: "center", md: "left" });
 
   const handleReloadAndScroll = () => {
