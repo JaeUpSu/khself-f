@@ -18,8 +18,6 @@ import {
   Link as ChakraLink,
   useBreakpointValue,
   useMediaQuery,
-  StatLabel,
-  Stat,
 } from "@chakra-ui/react";
 
 import {
@@ -44,7 +42,6 @@ import { DiTechcrunch } from "react-icons/di";
 
 import ScrollLink from "./components/ScrollLink";
 import HamburgerButton from "./components/header/HamburgerButton";
-import { GaugeBar } from "./components/GaugeBar";
 import SkillIcon from "./components/SkillIcon";
 
 const FixedHeader = styled.header`
@@ -60,7 +57,6 @@ const FixedHeader = styled.header`
 
 export default function Home(): React.ReactElement {
   const smIconSize = 30;
-  const mdIconSize = 40;
   const frontSkillIcons = [
     SiReact,
     SiTypescript,
