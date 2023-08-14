@@ -35,6 +35,7 @@ import {
   SiSentry,
   SiFirebase,
   SiGraphql,
+  SiAmazonaws,
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
@@ -74,6 +75,7 @@ export default function Home(): React.ReactElement {
     SiSentry,
     SiFirebase,
     SiAndroid,
+    SiAmazonaws,
     FaJava,
   ];
 
@@ -259,6 +261,14 @@ export default function Home(): React.ReactElement {
                 <Heading as="h3" size="md" mb="10px">
                   Front-End Technologies I use
                 </Heading>
+                <Text
+                  textAlign="right"
+                  mr="2"
+                  color="blackAlpha.700"
+                  fontSize="8pt"
+                >
+                  (클릭하면 해당 기술 숙련도 확인)
+                </Text>
                 <Grid gap="5" templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
                   <Box
                     display="flex"
@@ -288,6 +298,14 @@ export default function Home(): React.ReactElement {
                 <Heading as="h3" size="md" mt="60px" mb="10px">
                   Technologies I use
                 </Heading>
+                <Text
+                  textAlign="right"
+                  mr="2"
+                  color="blackAlpha.700"
+                  fontSize="8pt"
+                >
+                  (클릭하면 해당 기술 숙련도 확인)
+                </Text>
                 <Grid gap="5" templateColumns={{ base: "1fr", md: "1fr 1fr" }}>
                   <Box
                     display="flex"

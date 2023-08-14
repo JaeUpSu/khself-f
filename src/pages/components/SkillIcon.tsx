@@ -55,6 +55,7 @@ const SkillIcon = ({ icon, gauge }: Props) => {
                   height: `${lgIconSize}px`,
                 },
               })}
+
               <Box my="3">
                 <Text fontWeight="semibold" fontSize="16pt" mb="2">
                   Next.js
