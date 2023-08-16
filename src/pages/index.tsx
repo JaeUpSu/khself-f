@@ -17,8 +17,8 @@ const sections: ISection[] = [
 export default function Home(): React.ReactElement {
   return (
     <main>
-      <VStack w="100%" px="32px" pb="10">
-        <VStack py="10px" w="100%" maxW="1200px">
+      <VStack w="100%" px="32px" pb="10" backgroundColor="blackAlpha.200">
+        <VStack pt="10px" mb="70px" w="100%" maxW="1200px">
           <Header />
           <Image mt="130px" w="400px" h="340px" src="khs_image2.png" />
           {sections.map((section: ISection) => (
@@ -27,6 +27,7 @@ export default function Home(): React.ReactElement {
               id={section.name}
               style={{
                 width: "100%",
+                backgroundColor: "transparent",
               }}
             >
               {section.component}
