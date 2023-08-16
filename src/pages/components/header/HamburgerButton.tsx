@@ -13,24 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import ScrollLink from "../ScrollLink";
-
-const ForwardedRxHamburger = React.forwardRef<
-  SVGSVGElement,
-  React.SVGProps<SVGSVGElement>
->(({ onClick, style, ...rest }, ref) => (
-  <RxHamburgerMenu
-    onClick={onClick}
-    style={{
-      ...style,
-      width: "30px",
-      height: "30px",
-      cursor: "pointer",
-    }}
-    {...rest}
-    ref={ref}
-  />
-));
+import ScrollLink from "./ScrollLink";
 
 function HamburgerButton() {
   const { isOpen, onOpen, onClose } = useDisclosure();

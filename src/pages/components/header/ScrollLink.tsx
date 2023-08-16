@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ChakraLink, useBreakpointValue } from "@chakra-ui/react";
+import { Link as ChakraLink } from "@chakra-ui/react";
 
 interface Props {
   to: string;
