@@ -13,6 +13,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { GaugeBar } from "../GaugeBar";
+import { AnimatePresence } from "framer-motion";
 
 interface Props {
   icon: ReactElement;
@@ -42,7 +43,7 @@ const SkillIcon = ({ icon, gauge }: Props) => {
       <GaugeBar gauge={gauge} />
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent maxW="400px">
           <ModalCloseButton />
           <ModalBody>
             <VStack my="10">

@@ -1,10 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    body {
-        margin: 0;
-        padding: 0;
+a{
+        text-decoration: none;
+        color: inherit;
+    }
+    *{
         box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
+    }
+    body{
+        line-height: 1;
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #F6F9F0;
+        margin-bottom: 100px;
+    }
+    ol, ul{
+        list-style: none;
+    }
+    button {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
     }
 `;
