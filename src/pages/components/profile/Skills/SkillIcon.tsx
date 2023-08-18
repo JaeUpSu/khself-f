@@ -1,18 +1,6 @@
 import React, { ReactElement } from "react";
-import {
-  Flex,
-  useDisclosure,
-  Modal,
-  ModalBody,
-  ModalOverlay,
-  ModalContent,
-  ModalCloseButton,
-  VStack,
-  Text,
-  Spacer,
-  Box,
-} from "@chakra-ui/react";
-import { GaugeBar } from "./GaugeBar";
+import { Flex, useDisclosure, Spacer } from "@chakra-ui/react";
+import { GaugeBar } from "../GaugeBar";
 import { SkillModal } from "./SkillModal";
 
 interface Props {

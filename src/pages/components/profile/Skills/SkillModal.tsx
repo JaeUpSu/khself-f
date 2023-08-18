@@ -10,7 +10,7 @@ import {
   Text,
   Box,
 } from "@chakra-ui/react";
-import { GaugeBar } from "./GaugeBar";
+import { GaugeBar } from "../GaugeBar";
 
 interface Props {
   icon: ReactElement;
