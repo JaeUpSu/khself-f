@@ -43,7 +43,7 @@ export const Header = () => {
           <Heading size="xl" onClick={handleReload} cursor="pointer">
             <Image
               src="khs_logo.png"
-              boxSize="70px"
+              boxSize="60px"
               objectFit="contain"
               maxWidth="100%"
             />

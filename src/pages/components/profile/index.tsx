@@ -74,14 +74,14 @@ export const Profile = () => {
 
   return (
     <VStack
-      spacing={4}
+      spacing={2}
       alignItems="center"
       style={{
         padding: 4,
         width: "100%",
         marginTop: "50px",
-        paddingTop: "40px",
-        paddingBottom: "40px",
+        paddingTop: "20px",
+        paddingBottom: "30px",
         borderRadius: 30,
         backgroundColor: "white",
         boxShadow:
@@ -175,7 +175,7 @@ export const Profile = () => {
       <Box
         py={8}
         px={14}
-        mt="10"
+        mt="7"
         border="0px solid rgb(210,210,210)"
         borderWidth={skillBorderValues}
         borderRadius="md"
