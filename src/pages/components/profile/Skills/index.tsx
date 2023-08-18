@@ -47,8 +47,7 @@ export const Skills = () => {
     <Box
       py={8}
       px={14}
-      mt="7"
-      border="0px solid rgb(210,210,210)"
+      mt={7}
       borderWidth={skillBorderValues}
       borderRadius="md"
     >

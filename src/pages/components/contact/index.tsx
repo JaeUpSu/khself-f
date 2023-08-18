@@ -1,9 +1,6 @@
-import { VStack } from "@chakra-ui/react";
+import { VStack, Text } from "@chakra-ui/react";
 
-import { Skills } from "./Skills";
-import { MyInfo } from "./MyInfo";
-
-export const Profile = () => {
+export const Contact = () => {
   return (
     <VStack
       spacing={2}
@@ -20,8 +17,9 @@ export const Profile = () => {
           "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
       }}
     >
-      <MyInfo />
-      <Skills />
+      <Text w="100%" fontWeight="semibold" fontSize="17pt">
+        Contact Me
+      </Text>
     </VStack>
   );
 };

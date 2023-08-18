@@ -21,6 +21,7 @@ const FixedHeader = styled.header`
   width: 100%;
   padding: 10px 32px;
   background: #fff;
+  opacity: 0.8;
   z-index: 1000;
   border-bottom: 1px solid lightgray;
 `;
@@ -30,6 +31,13 @@ export const Header = () => {
 
   const [isBelowBreakPoint] = useMediaQuery("(max-width: 600px)");
 
+  const headerList = [
+    "Home",
+    "Profile",
+    "Self-Introduce",
+    "PortFolio",
+    "Contact",
+  ];
   const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
 
   const handleReload = () => {
@@ -57,18 +65,11 @@ export const Header = () => {
               listStyleType="none"
               gap={headerGapValues}
             >
-              <ListItem key={1}>
-                <ScrollLink to="Profile" label="Profile" />
-              </ListItem>
-              <ListItem key={2}>
-                <ScrollLink to="Description" label="Description" />
-              </ListItem>
-              <ListItem key={3}>
-                <ScrollLink to="PortFolio" label="PortFolio" />
-              </ListItem>
-              <ListItem key={4}>
-                <ScrollLink to="Contact" label="Contact" />
-              </ListItem>
+              {headerList.map((label: string, index: number) => (
+                <ListItem key={index}>
+                  <ScrollLink to={label} label={label} />
+                </ListItem>
+              ))}
             </List>
           </nav>
           {isBelowBreakPoint && <HamburgerButton />}
