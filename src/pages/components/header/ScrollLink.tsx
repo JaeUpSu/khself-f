@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as ChakraLink } from "@chakra-ui/react";
+import { scrollToSection } from "@/pages/lib/scrollToSection";
 
 interface Props {
   to: string;
@@ -7,20 +8,9 @@ interface Props {
 }
 
 const ScrollLink = ({ to, label }: Props) => {
-  const scrollToSection = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  const onEvent = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-
-    if (to === "Home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const section = document.getElementById(to);
-      if (section) {
-        const offset = section.offsetTop - 30;
-        window.scrollTo({ top: offset, behavior: "smooth" });
-      }
-    }
+    scrollToSection(to);
   };
 
   return (
@@ -32,7 +22,7 @@ const ScrollLink = ({ to, label }: Props) => {
       cursor="pointer"
       fontWeight="bold"
       color="rgb(20, 20, 20)"
-      onClick={scrollToSection}
+      onClick={onEvent}
       alignItems="center"
       justifyContent="center"
       _hover={{
