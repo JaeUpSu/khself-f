@@ -1,4 +1,5 @@
 import { VStack, Text } from "@chakra-ui/react";
+import { Mydata } from "./MyData";
 
 export const Description = () => {
   return (
@@ -20,6 +21,9 @@ export const Description = () => {
       <Text w="100%" fontWeight="semibold" fontSize="17pt">
         Self Introduce
       </Text>
+      <VStack mt="5" w="100%" minH="500px" justifyContent="center">
+        <Mydata />
+      </VStack>
     </VStack>
   );
 };
