@@ -3,14 +3,8 @@ import { Image, VStack } from "@chakra-ui/react";
 
 import { Header } from "./components/header";
 import { Sections } from "./components/Sections";
-import { debounce } from "lodash";
 
 export default function Home(): React.ReactElement {
-  // const handleScroll = debounce((e: React.WheelEvent<HTMLDivElement>) => {
-  //   const deltaY = e.deltaY;
-  //   console.log("scroll", deltaY);
-  // }, 200);
-
   return (
     <main>
       <VStack

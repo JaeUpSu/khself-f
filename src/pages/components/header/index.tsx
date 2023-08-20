@@ -1,18 +1,9 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import {
-  Image,
-  Flex,
-  Spacer,
-  Heading,
-  List,
-  ListItem,
-  useMediaQuery,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Image, Flex, Spacer, Heading, useMediaQuery } from "@chakra-ui/react";
 
-import ScrollLink from "./ScrollLink";
 import HamburgerButton from "./HamburgerButton";
+import { Nav } from "./Nav";
 
 const FixedHeader = styled.header`
   position: fixed;
@@ -21,24 +12,22 @@ const FixedHeader = styled.header`
   width: 100%;
   padding: 10px 32px;
   background: #fff;
-  opacity: 0.8;
+  opacity: 0.75;
   z-index: 1000;
   border-bottom: 1px solid lightgray;
 `;
 
+export const headerList = [
+  "Home",
+  "Profile",
+  "Self-Introduce",
+  "PortFolio",
+  "Contact",
+];
+
 export const Header = () => {
   const router = useRouter();
-
   const [isBelowBreakPoint] = useMediaQuery("(max-width: 600px)");
-
-  const headerList = [
-    "Home",
-    "Profile",
-    "Self-Introduce",
-    "PortFolio",
-    "Contact",
-  ];
-  const headerGapValues = useBreakpointValue({ base: 3, md: 8 });
 
   const handleReload = () => {
     router.push(router.pathname);
@@ -57,21 +46,7 @@ export const Header = () => {
             />
           </Heading>
           <Spacer />
-          <nav style={{ display: isBelowBreakPoint ? "none" : "block" }}>
-            <List
-              display="flex"
-              flexDirection="row"
-              alignItems="center"
-              listStyleType="none"
-              gap={headerGapValues}
-            >
-              {headerList.map((label: string, index: number) => (
-                <ListItem key={index}>
-                  <ScrollLink to={label} label={label} />
-                </ListItem>
-              ))}
-            </List>
-          </nav>
+          <Nav isPoint={isBelowBreakPoint} />
           {isBelowBreakPoint && <HamburgerButton />}
         </Flex>
       </Flex>

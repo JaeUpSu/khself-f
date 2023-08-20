@@ -1,6 +1,8 @@
 import React from "react";
+import { useSetRecoilState } from "recoil";
 import { Link as ChakraLink } from "@chakra-ui/react";
-import { scrollToSection } from "@/pages/lib/scrollToSection";
+import { activeSectionState } from "@/pages/services/atoms";
+import { headerList } from ".";
 
 interface Props {
   to: string;
@@ -8,9 +10,11 @@ interface Props {
 }
 
 const ScrollLink = ({ to, label }: Props) => {
+  const setActiveSection = useSetRecoilState(activeSectionState);
+
   const onEvent = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     event.preventDefault();
-    scrollToSection(to);
+    setActiveSection({ index: headerList.indexOf(to), name: to });
   };
 
   return (

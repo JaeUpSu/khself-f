@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { VStack } from "@chakra-ui/react";
+import { headerList } from "./header";
 import { Profile } from "./profile";
 import { Description } from "./description";
 import { Portfolio } from "./portfolio";
 import { Contact } from "./contact";
 import { scrollToSection } from "../lib/scrollToSection";
-import { useDidMountEffect } from "../hooks/useDidMountEffect";
+import { activeSectionState } from "../services/atoms";
+import { useRecoilValue } from "recoil";
 
 interface ISection {
   name: string;
@@ -20,43 +22,10 @@ export const sections: ISection[] = [
 ];
 
 export const Sections = () => {
-  const [activeSection, setActiveSection] = useState(0);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useDidMountEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-
-      const deltaY = e.deltaY;
-      const scrollDirection = deltaY > 0 ? "up" : "down";
-
-      const delay = 500;
-
-      scrollTimeoutRef.current = setTimeout(() => {
-        console.log("scroll", scrollDirection, activeSection);
-
-        if (scrollDirection === "down" && activeSection < 4) {
-          setActiveSection((i) => i + 1);
-        } else if (scrollDirection === "up" && activeSection > 0) {
-          setActiveSection((i) => i - 1);
-        }
-      }, delay);
-    };
-
-    document.addEventListener("wheel", handleWheel);
-
-    return () => {
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-      document.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
+  const activeSection = useRecoilValue(activeSectionState);
 
   useEffect(() => {
-    scrollToSection(sections[activeSection].name);
+    scrollToSection(headerList[activeSection.index]);
   }, [activeSection]);
 
   return (

@@ -17,9 +17,20 @@ export const MyInfo = () => {
   const smIconSize = 30;
 
   const profileImgValues = useBreakpointValue({
-    base: "300px",
-    md: "250px",
+    base: "160px",
+    sm: "250px",
   });
+
+  const profileNameValues = useBreakpointValue({
+    base: "17pt",
+    sm: "22pt",
+  });
+
+  const profileTextValues = useBreakpointValue({
+    base: "10pt",
+    sm: "13pt",
+  });
+
   return (
     <Grid
       pt={5}
@@ -38,13 +49,13 @@ export const MyInfo = () => {
       </GridItem>
       <GridItem w="100%" key="pText" display="flex" justifyContent="center">
         <Box ml={4} mt={7}>
-          <Heading as="h2" textAlign="end">
+          <Heading as="h2" textAlign="end" fontSize={profileNameValues}>
             Kim Hyeon Su
           </Heading>
-          <Box textAlign="end" mt="5">
+          <Box textAlign="end" mt="5" fontSize={profileTextValues}>
             신입 프론트 엔드
           </Box>
-          <Box textAlign="end" mt="3">
+          <Box textAlign="end" mt="3" fontSize={profileTextValues}>
             hyeongs2323@gmail.com
           </Box>
           <Flex gap="10px" mt="6" justifyContent="end">
