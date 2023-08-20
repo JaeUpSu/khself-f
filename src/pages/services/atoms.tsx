@@ -7,3 +7,8 @@ export const activeSectionState = atom({
     name: "Home",
   },
 });
+
+export const activeFormState = atom({
+  key: "activeForm",
+  default: 0,
+});

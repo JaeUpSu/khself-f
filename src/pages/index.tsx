@@ -14,9 +14,8 @@ export default function Home(): React.ReactElement {
         justifyContent="center"
         backgroundColor="blackAlpha.50"
       >
-        <VStack pt="10px" mb="70px" w="100%" maxW="1200px">
+        <VStack pt="10px" mb="100px" w="100%" maxW="1200px">
           <Header />
-          <Image mt="130px" w="400px" h="340px" src="khs_image2.png" />
           <Sections />
         </VStack>
       </VStack>
