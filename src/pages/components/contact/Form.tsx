@@ -65,7 +65,7 @@ export const Form = () => {
               <Textarea
                 mt={3}
                 py={6}
-                minH="200px"
+                minH="170px"
                 placeholder="요청 사항을 작성해주세요."
               />
             </FormControl>

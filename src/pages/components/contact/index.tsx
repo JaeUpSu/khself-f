@@ -1,7 +1,10 @@
 import { VStack, Text, Image, Progress } from "@chakra-ui/react";
 import { Form } from "./Form";
+import { useRecoilValue } from "recoil";
+import { activeFormState } from "@/pages/services/atoms";
 
 export const Contact = () => {
+  const activeFormIndex = useRecoilValue(activeFormState);
   return (
     <VStack
       spacing={2}
@@ -35,7 +38,7 @@ export const Contact = () => {
         <Progress
           w="70%"
           minW="170px"
-          value={100}
+          value={activeFormIndex === 0 ? 50 : 100}
           size="xs"
           colorScheme="pink"
         />
