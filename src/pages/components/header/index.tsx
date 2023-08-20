@@ -17,13 +17,7 @@ const FixedHeader = styled.header`
   border-bottom: 1px solid lightgray;
 `;
 
-export const headerList = [
-  "Home",
-  "Profile",
-  "Self-Introduce",
-  "PortFolio",
-  "Contact",
-];
+export const headerList = ["Profile", "Self-Introduce", "PortFolio", "Contact"];
 
 export const Header = () => {
   const router = useRouter();
