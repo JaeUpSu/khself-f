@@ -60,7 +60,7 @@ export const Form = () => {
           <>
             <FormControl mt={8} minW="200px">
               <FormLabel color="telegram.900" fontWeight="semibold">
-                Email address
+                Request
               </FormLabel>
               <Textarea
                 mt={3}
@@ -74,7 +74,7 @@ export const Form = () => {
                 colorScheme="twitter"
                 onClick={() => setActiveFormIndex(0)}
               >
-                완료
+                보내기
               </Button>
             </Flex>
           </>

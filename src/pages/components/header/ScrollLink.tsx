@@ -1,6 +1,6 @@
 import React from "react";
 import { useSetRecoilState } from "recoil";
-import { Link as ChakraLink } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 import { activeSectionState } from "@/pages/services/atoms";
 import { headerList } from ".";
 
@@ -18,7 +18,7 @@ const ScrollLink = ({ to, label }: Props) => {
   };
 
   return (
-    <ChakraLink
+    <Link
       py="2"
       px="3"
       h="100%"
@@ -35,7 +35,7 @@ const ScrollLink = ({ to, label }: Props) => {
       }}
     >
       {label}
-    </ChakraLink>
+    </Link>
   );
 };
 

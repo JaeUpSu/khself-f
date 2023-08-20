@@ -11,7 +11,7 @@ export const Profile = () => {
       style={{
         width: "100%",
         padding: "40px",
-        marginTop: "90px",
+        marginTop: "150px",
         paddingBottom: "30px",
         backgroundColor: "white",
         minHeight: "710px",
