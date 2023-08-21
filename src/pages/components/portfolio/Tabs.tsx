@@ -28,7 +28,7 @@ export const PptTabs = () => {
       </TabList>
 
       <TabPanels display="flex" justifyContent="center">
-        {ppts.map((p: IPPT, index: number) => (
+        {ppts.map((ppt: IPPT, index: number) => (
           <TabPanel key={index}>
             <PptCard />
           </TabPanel>

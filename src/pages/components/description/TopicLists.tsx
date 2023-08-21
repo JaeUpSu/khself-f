@@ -1,5 +1,7 @@
-import { Box, Stack, StackDivider } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { Topic } from "./Topic";
+
+const CustomStackDivider = () => <Box h="1.5px" bg="gray.400" mt="10" mb="5" />;
 
 interface ITopic {
   title: string;
@@ -27,7 +29,7 @@ export const Mydata = () => {
   ];
 
   return (
-    <Stack p="10" w="100%" divider={<StackDivider />} spacing="10">
+    <Stack p="10" w="100%" divider={<CustomStackDivider />}>
       {topics.map((topic: ITopic, index: number) => (
         <Box key={index}>
           <Topic topic={topic} />
