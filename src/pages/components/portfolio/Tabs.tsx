@@ -1,5 +1,6 @@
 import { Tabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
 import { Title } from "./Title";
+import { PptCard } from "./PptCard";
 
 interface IPPT {
   title: string;
@@ -26,9 +27,11 @@ export const PptTabs = () => {
         ))}
       </TabList>
 
-      <TabPanels>
+      <TabPanels display="flex" justifyContent="center">
         {ppts.map((p: IPPT, index: number) => (
-          <TabPanel key={index}>{p.title} !!</TabPanel>
+          <TabPanel key={index}>
+            <PptCard />
+          </TabPanel>
         ))}
       </TabPanels>
     </Tabs>
