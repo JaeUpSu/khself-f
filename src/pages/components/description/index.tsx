@@ -1,5 +1,5 @@
 import { VStack, Text } from "@chakra-ui/react";
-import { Mydata } from "./MyData";
+import { Mydata } from "./TopicLists";
 
 export const Description = () => {
   return (

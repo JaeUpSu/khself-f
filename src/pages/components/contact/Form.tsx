@@ -7,11 +7,18 @@ import {
   Button,
   Flex,
   Textarea,
+  Select,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
 
 export const Form = () => {
   const [activeFormIndex, setActiveFormIndex] = useRecoilState(activeFormState);
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(event.target.value);
+  };
 
   return (
     <form
@@ -23,6 +30,36 @@ export const Form = () => {
     >
       <VStack w="60%" h="100%" py="5" px="10">
         {activeFormIndex === 0 && (
+          <>
+            <FormControl
+              mt={7}
+              gap={3}
+              h="211px"
+              minW="200px"
+              display="flex"
+              flexDir="column"
+              justifyContent="center"
+            >
+              <FormLabel color="telegram.900" fontWeight="semibold">
+                Funnel
+              </FormLabel>
+              <Select value={selectedValue} onChange={handleSelectChange}>
+                <option value="option1">지인 소개</option>
+                <option value="option2">JaeUpSu 깃허브</option>
+                <option value="option3">지원 서류 첨부된 링크</option>
+              </Select>
+            </FormControl>
+            <Flex mt="5" w="100%" justifyContent="right">
+              <Button
+                colorScheme="twitter"
+                onClick={() => setActiveFormIndex(1)}
+              >
+                다음
+              </Button>
+            </Flex>
+          </>
+        )}
+        {activeFormIndex === 1 && (
           <>
             <FormControl mt={7} minW="200px">
               <FormLabel color="telegram.900" fontWeight="semibold">
@@ -46,17 +83,18 @@ export const Form = () => {
                 placeholder="이메일을 입력해주세요."
               />
             </FormControl>
-            <Flex mt="5" w="100%" justifyContent="right">
+            <Flex mt="5" w="100%" justifyContent="right" gap="3">
+              <Button onClick={() => setActiveFormIndex(0)}>이전</Button>
               <Button
                 colorScheme="twitter"
-                onClick={() => setActiveFormIndex(1)}
+                onClick={() => setActiveFormIndex(2)}
               >
                 다음
               </Button>
             </Flex>
           </>
         )}
-        {activeFormIndex === 1 && (
+        {activeFormIndex === 2 && (
           <>
             <FormControl mt={8} minW="200px">
               <FormLabel color="telegram.900" fontWeight="semibold">
@@ -69,7 +107,8 @@ export const Form = () => {
                 placeholder="요청 사항을 작성해주세요."
               />
             </FormControl>
-            <Flex mt="5" w="100%" justifyContent="right">
+            <Flex mt="5" w="100%" justifyContent="right" gap="3">
+              <Button onClick={() => setActiveFormIndex(1)}>이전</Button>
               <Button
                 colorScheme="twitter"
                 onClick={() => setActiveFormIndex(0)}

@@ -1,7 +1,8 @@
-import { VStack, Text, Image, Progress } from "@chakra-ui/react";
+import { VStack, Text, Image } from "@chakra-ui/react";
 import { Form } from "./Form";
 import { useRecoilValue } from "recoil";
 import { activeFormState } from "@/pages/services/atoms";
+import { ContactStepper } from "./Stepper";
 
 export const Contact = () => {
   const activeFormIndex = useRecoilValue(activeFormState);
@@ -35,13 +36,7 @@ export const Contact = () => {
           transform="translate(50, 50)"
           src="khself-logo2.png"
         />
-        <Progress
-          w="70%"
-          minW="170px"
-          value={activeFormIndex === 0 ? 50 : 100}
-          size="xs"
-          colorScheme="pink"
-        />
+        <ContactStepper activeIndex={activeFormIndex} />
       </VStack>
       <Form />
     </VStack>
