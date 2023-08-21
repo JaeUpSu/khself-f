@@ -1,5 +1,6 @@
 import {
   Box,
+  Spacer,
   Step,
   StepDescription,
   StepIcon,
@@ -10,6 +11,7 @@ import {
   StepTitle,
   Stepper,
   useSteps,
+  Text,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 
@@ -46,8 +48,11 @@ export const ContactStepper = ({ activeIndex }: Props) => {
           </StepIndicator>
 
           <Box flexShrink="0">
-            <StepTitle mb="1">{step.title}</StepTitle>
-            <StepDescription fontSize="9pt">{step.description}</StepDescription>
+            <StepTitle>{step.title}</StepTitle>
+            <Spacer mb="1" />
+            <StepDescription>
+              <Text fontSize="9pt">{step.description}</Text>
+            </StepDescription>
           </Box>
 
           <StepSeparator />

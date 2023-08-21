@@ -51,7 +51,7 @@ export const Form = () => {
             </FormControl>
             <Flex mt="5" w="100%" justifyContent="right">
               <Button
-                colorScheme="twitter"
+                colorScheme="facebook"
                 onClick={() => setActiveFormIndex(1)}
               >
                 다음
@@ -86,7 +86,7 @@ export const Form = () => {
             <Flex mt="5" w="100%" justifyContent="right" gap="3">
               <Button onClick={() => setActiveFormIndex(0)}>이전</Button>
               <Button
-                colorScheme="twitter"
+                colorScheme="facebook"
                 onClick={() => setActiveFormIndex(2)}
               >
                 다음
@@ -110,7 +110,7 @@ export const Form = () => {
             <Flex mt="5" w="100%" justifyContent="right" gap="3">
               <Button onClick={() => setActiveFormIndex(1)}>이전</Button>
               <Button
-                colorScheme="twitter"
+                colorScheme="facebook"
                 onClick={() => setActiveFormIndex(0)}
               >
                 보내기

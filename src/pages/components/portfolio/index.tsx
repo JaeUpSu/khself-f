@@ -1,4 +1,5 @@
-import { Text, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
+import { PptTabs } from "./Tabs";
 
 export const Portfolio = () => {
   return (
@@ -17,9 +18,9 @@ export const Portfolio = () => {
           "0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08)",
       }}
     >
-      <Text w="100%" fontWeight="semibold" fontSize="17pt">
-        Portfolio
-      </Text>
+      <VStack alignItems="center" gap={5} w="100%">
+        <PptTabs />
+      </VStack>
     </VStack>
   );
 };
