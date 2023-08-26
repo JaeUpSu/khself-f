@@ -46,15 +46,13 @@ export const ContactStepper = ({ activeIndex }: Props) => {
               active={<StepNumber />}
             />
           </StepIndicator>
-
           <Box flexShrink="0">
             <StepTitle>{step.title}</StepTitle>
             <Spacer mb="1" />
-            <StepDescription>
-              <Text fontSize="9pt">{step.description}</Text>
+            <StepDescription style={{ fontSize: "9pt" }}>
+              {step.description}
             </StepDescription>
           </Box>
-
           <StepSeparator />
         </Step>
       ))}
