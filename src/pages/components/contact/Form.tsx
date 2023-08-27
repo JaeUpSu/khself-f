@@ -28,14 +28,14 @@ export const Form = () => {
         justifyContent: "center",
       }}
     >
-      <VStack w="60%" h="100%" py="5" px="10">
+      <VStack w="60%" minW="210px" h="100%" p="5">
         {activeFormIndex === 0 && (
           <>
             <FormControl
               mt={7}
               gap={3}
+              w="100%"
               h="211px"
-              minW="200px"
               display="flex"
               flexDir="column"
               justifyContent="center"
@@ -61,7 +61,7 @@ export const Form = () => {
         )}
         {activeFormIndex === 1 && (
           <>
-            <FormControl mt={7} minW="200px">
+            <FormControl mt={7} w="100%">
               <FormLabel color="telegram.900" fontWeight="semibold">
                 Name
               </FormLabel>
@@ -72,7 +72,7 @@ export const Form = () => {
                 placeholder="이름을 입력해주세요."
               />
             </FormControl>
-            <FormControl mt={8} minW="200px">
+            <FormControl mt={8} w="100%">
               <FormLabel color="telegram.900" fontWeight="semibold">
                 Email address
               </FormLabel>
@@ -96,7 +96,7 @@ export const Form = () => {
         )}
         {activeFormIndex === 2 && (
           <>
-            <FormControl mt={8} minW="200px">
+            <FormControl mt={8} w="100%">
               <FormLabel color="telegram.900" fontWeight="semibold">
                 Request
               </FormLabel>
