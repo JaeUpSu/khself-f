@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Title } from "./Title";
 import { PptCard } from "./PptCard";
+import MainSlider from "./PptSlider";
 
 interface IPPT {
   title: string;
@@ -24,15 +25,16 @@ const ppts = [
 ];
 
 export const PptTabs = () => {
-  const [isSmallerThan800] = useMediaQuery("(max-width: 800px)");
+  const [isSmallerThan850] = useMediaQuery("(max-width: 850px)");
 
   return (
     <Tabs
-      colorScheme="facebook"
+      w="100%"
+      maxW="700px"
       display="flex"
-      flexDir={isSmallerThan800 ? "column" : "row"}
+      flexDir={isSmallerThan850 ? "column" : "row"}
     >
-      {isSmallerThan800 ? (
+      {isSmallerThan850 ? (
         <>
           <TabList
             h="100%"
@@ -104,10 +106,10 @@ export const PptTabs = () => {
           ))}
         </TabList>
       )}
-      <TabPanels display="flex" justifyContent="center">
+      <TabPanels w="90%" display="flex" justifyContent="center">
         {ppts.map((ppt: IPPT, index: number) => (
-          <TabPanel key={index}>
-            <PptCard />
+          <TabPanel key={index} w="100%">
+            <MainSlider />
           </TabPanel>
         ))}
       </TabPanels>
