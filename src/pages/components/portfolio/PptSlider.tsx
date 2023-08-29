@@ -10,7 +10,7 @@ import { Container } from "@chakra-ui/react";
 
 const MainSlider = () => {
   const settings = {
-    dots: true,
+    dots: false,
     fade: true,
     infinite: true,
     speed: 1000,

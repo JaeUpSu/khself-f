@@ -19,7 +19,7 @@ const ppts = [
   { title: "KHS-elf", isNew: true },
   { title: "Coding Garden", isNew: false },
   { title: "Bangsam", isNew: false },
-  { title: "ReactMaster", isNew: false },
+  { title: "React Master", isNew: false },
   { title: "MyInfo", isNew: false },
   { title: "Runner8", isNew: false },
 ];
