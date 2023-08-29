@@ -32,7 +32,7 @@ const MainSlider = () => {
 const StyledSlider = styled(Slider)`
   width: 100%;
   max-width: 600px;
-  min-width: 250px;
+  min-width: 200px;
 
   .slick-prev {
     z-index: 1;

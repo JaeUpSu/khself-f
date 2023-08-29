@@ -36,7 +36,7 @@ export const ContactStepper = ({ activeIndex }: Props) => {
   }, [activeIndex]);
 
   return (
-    <Stepper index={activeStep} colorScheme="pink" mt="5">
+    <Stepper mt="5" index={activeStep} colorScheme="pink">
       {steps.map((step, index) => (
         <Step key={index}>
           <StepIndicator>

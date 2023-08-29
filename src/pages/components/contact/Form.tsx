@@ -28,7 +28,7 @@ export const Form = () => {
         justifyContent: "center",
       }}
     >
-      <VStack w="60%" minW="210px" h="100%" p="5">
+      <VStack w="80%" minW="210px" h="100%" p="5">
         {activeFormIndex === 0 && (
           <>
             <FormControl

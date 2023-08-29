@@ -31,6 +31,7 @@ export const PptTabs = () => {
     <Tabs
       w="100%"
       maxW="700px"
+      minW="250px"
       display="flex"
       flexDir={isSmallerThan850 ? "column" : "row"}
     >
@@ -42,6 +43,7 @@ export const PptTabs = () => {
             mb="2"
             mx="4"
             gap="1"
+            minW="200px"
             display="flex"
             flexDir="row"
             borderRadius="lg"
@@ -62,6 +64,7 @@ export const PptTabs = () => {
           </TabList>
           <TabList
             h="100%"
+            minW="200px"
             mx="4"
             gap="1"
             display="flex"

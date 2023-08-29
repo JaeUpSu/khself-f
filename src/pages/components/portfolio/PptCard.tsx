@@ -12,7 +12,7 @@ import {
 
 export const PptCard = () => {
   return (
-    <Card maxW="600px" minW="260px" w="100%" boxShadow="md">
+    <Card w="100%" boxShadow="md">
       <CardHeader padding="13px">
         <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
           <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
